@@ -1,6 +1,19 @@
-<div cdkDropList (cdkDropListDropped)="onDrop($event)">
-  <div class="draggable-box" cdkDrag *ngFor="let task of tasks">
-    {{task.title}}
+<div class="container">
+  <div class="todo-content" [cdkDropListData]="todoList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    #listOfTodos="cdkDropList" [cdkDropListConnectedTo]="listOfDone">
+    <h1>Todo</h1>
+    <div class="draggable-box" cdkDrag *ngFor="let todo of todoList">
+      {{todo.title}}
+    </div>
+  </div>
+
+  <div class="done-content" [cdkDropListData]="doneList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    #listOfDone="cdkDropList" [cdkDropListConnectedTo]="listOfTodos">
+    <h1>Done</h1>
+
+    <div class="draggable-box" cdkDrag *ngFor="let done of doneList">
+      {{done.title}}
+    </div>
   </div>
 
 </div>

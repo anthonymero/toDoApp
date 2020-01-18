@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'toDoApp';
 
-  tasks = [
+  todoList = [
     {
       id: 1,
       title: 'task 01',
@@ -28,10 +28,14 @@ export class AppComponent {
 
   ];
 
+  doneList = [];
+
   onDrop(event: CdkDragDrop<any[]>) {
-    console.log(event);
-    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
-    console.log(this.tasks);
+    if (event.previousContainer === event.container) {
+      moveItemInArray(this.todoList, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+    }
 
   }
 }

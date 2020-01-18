@@ -120,6 +120,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "toDoApp"
+    }
+  },
+  "defaultProject": "toDoApp",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
