@@ -4,6 +4,7 @@
     <h1>Todo</h1>
     <div class="draggable-box" cdkDrag *ngFor="let todo of todoList">
       {{todo.title}}
+      <mat-icon svgIcon="add-task" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
     </div>
   </div>
 

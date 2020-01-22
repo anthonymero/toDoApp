@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,17 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(
+    private readonly matIconRegistry: MatIconRegistry,
+    private readonly domSanatizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      "add-task",
+      this.domSanatizer.bypassSecurityTrustResourceUrl("../assets/icons/add_circle_outline.svg")
+    )
+   }
+
   title = 'toDoApp';
 
   todoList = [
