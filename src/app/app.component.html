@@ -1,20 +1,23 @@
-<div class="container">
-  <div class="todo-content" [cdkDropListData]="todoList" cdkDropList (cdkDropListDropped)="onDrop($event)"
-    #listOfTodos="cdkDropList" [cdkDropListConnectedTo]="listOfDone">
-    <h1>Todo</h1>
-    <div class="draggable-box" cdkDrag *ngFor="let todo of todoList">
-      {{todo.title}}
-      <mat-icon svgIcon="add-task" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+<div class="app">
+  <div class="container">
+    <div class="todo-content" [cdkDropListData]="todoList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+      #listOfTodos="cdkDropList" [cdkDropListConnectedTo]="listOfDone">
+      <h1>Todo</h1>
+      <div class="draggable-box" cdkDrag *ngFor="let todo of todoList">
+        {{todo.title}}
+        <!-- <mat-icon svgIcon="add_circle_outline" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon> -->
+        <mat-icon svgIcon="menu"></mat-icon>
+
+      </div>
+    </div>
+
+    <div class="done-content" [cdkDropListData]="doneList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+      #listOfDone="cdkDropList" [cdkDropListConnectedTo]="listOfTodos">
+      <h1>Done</h1>
+
+      <div class="draggable-box" cdkDrag *ngFor="let done of doneList">
+        {{done.title}}
+      </div>
     </div>
   </div>
-
-  <div class="done-content" [cdkDropListData]="doneList" cdkDropList (cdkDropListDropped)="onDrop($event)"
-    #listOfDone="cdkDropList" [cdkDropListConnectedTo]="listOfTodos">
-    <h1>Done</h1>
-
-    <div class="draggable-box" cdkDrag *ngFor="let done of doneList">
-      {{done.title}}
-    </div>
-  </div>
-
 </div>

@@ -11,13 +11,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent {
 
   constructor(
-    private readonly matIconRegistry: MatIconRegistry,
-    private readonly domSanatizer: DomSanitizer
+
   ) {
-    this.matIconRegistry.addSvgIcon(
-      "add-task",
-      this.domSanatizer.bypassSecurityTrustResourceUrl("../assets/icons/add_circle_outline.svg")
-    )
    }
 
   title = 'toDoApp';
