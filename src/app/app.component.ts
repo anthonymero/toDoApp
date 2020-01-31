@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +11,7 @@ export class AppComponent {
   constructor(
 
   ) {
-   }
+  }
 
   title = 'toDoApp';
 
@@ -38,12 +36,4 @@ export class AppComponent {
 
   doneList = [];
 
-  onDrop(event: CdkDragDrop<any[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(this.todoList, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
-    }
-
-  }
 }

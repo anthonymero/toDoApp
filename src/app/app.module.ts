@@ -6,10 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,

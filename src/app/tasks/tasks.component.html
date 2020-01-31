@@ -1,0 +1,27 @@
+<div class="tasks-content">
+
+  <div class="todo-list-content" [cdkDropListData]="todoList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    #listOfTodos="cdkDropList" [cdkDropListConnectedTo]="listOfDone">
+    <div class="todo-list-header">
+      <h1>Todo</h1>
+    </div>
+    <div class="todo-list-task-container draggable-box" cdkDrag *ngFor="let todo of todoList">
+      <div class="todo-list-task-title">
+        {{todo.title}}
+      </div>
+      <div class="todo-list-task-icons">
+        <mat-icon svgIcon="close" aria-hidden="false" aria-label="delete task icon"></mat-icon>
+        <mat-icon svgIcon="menu" aria-hidden="false" aria-label="edit task icon"></mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="done-list-content" [cdkDropListData]="doneList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    #listOfDone="cdkDropList" [cdkDropListConnectedTo]="listOfTodos">
+    <h1>Done</h1>
+
+    <div class="draggable-box" cdkDrag *ngFor="let done of doneList">
+      {{done.title}}
+    </div>
+  </div>
+</div>
