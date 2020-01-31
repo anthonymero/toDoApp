@@ -1,7 +1,10 @@
+@import "./../../assets/mixins";
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include d-flex{
+        justify-content: getJustify(sb);
+        align-content: getAlign(c); 
+      }
     height: 50px;
     background: steelblue;
     color: white;
@@ -11,5 +14,11 @@
         flex: 1 0 auto;
         text-align: center;
         font-size: 2rem;
+    }
+
+    &-menu {
+        @include d-flex{
+            align-items: getAlign(c);
+        }
     }
 }
