@@ -1,27 +1,53 @@
+@import "./../../assets/mixins";
+
 .tasks-content {
-  display: flex;
-  justify-content: space-around;
+  @include d-flex{
+    justify-content: getJustify(sa);
+  }
 
   .todo-list, .done-list {
     &-content {
-      width: 300px;
-      min-height: 50px;
+      width: 30rem;
+      min-height: 5rem;
       border: 1px solid grey;
       border-radius: 0.5rem;
-      padding: 5px;
+      padding: 1rem;
     }
 
     &-header {
+      @include d-flex {
+        justify-content: getJustify(sb);
+      }
+      font-size: 1.8rem;
+      padding: 1rem 0 3rem;
 
     }
 
     &-task {
       &-container {
-        display: flex;
-        justify-content: space-around;
+        width: 100%;
+        @include d-flex {
+          justify-content: getJustify(sb);
+        }
+        padding: 0.5rem 1rem;
+      }
+
+      &-icons {
+        @include d-flex{
+          flex-direction: getDirection(col);
+        }
+        cursor: pointer;
+        mat-icon.delete, mat-icon.edit {
+          width: 1.5rem;
+          @include d-flex{
+            align-self: getAlign(fe);
+          }
+        }
       }
     }
   }
+
+
 }
 
   

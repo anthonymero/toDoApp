@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -19,17 +18,22 @@ export class AppComponent {
     {
       id: 1,
       title: 'task 01',
-      details: 'task 01 details'
+      details: 'task 01 details',
+      priority: 'hight',
     },
     {
       id: 2,
       title: 'task 2',
-      details: 'task 2 details'
+      details: 'task 2 details',
+      priority: 'low',
+
     },
     {
       id: 3,
       title: 'task 3',
-      details: 'task 3 details'
+      details: 'task 3 details',
+      priority: 'medium',
+
     },
 
   ];

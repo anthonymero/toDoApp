@@ -26,4 +26,20 @@ export class TasksComponent implements OnInit {
 
   }
 
+  onAddTask(): any {
+    // Open dialog addTaskDialog
+  }
+
+  onDelete(task): void {
+    console.log(task);
+    alert(`delete ${task.title}`);
+  }
+
+  onEdit(task): void {
+    console.log(task);
+    alert(`edit ${task.title}`);
+    // Open dialog editTaskDialog
+
+  }
+
 }
