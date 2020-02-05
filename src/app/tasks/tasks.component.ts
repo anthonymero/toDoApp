@@ -13,6 +13,8 @@ export class TasksComponent implements OnInit {
   @Input() todoList: any[];
   @Input() doneList: any[];
 
+  createdTask;
+
 
   constructor(
     private readonly dialog: MatDialog,
@@ -32,7 +34,10 @@ export class TasksComponent implements OnInit {
 
   openCreateTaskDialog(): void {
     const dialogRef = this.dialog.open(CreateTaskDialogComponent);
-    dialogRef.afterClosed().subscribe(data => console.log('output', data));
+    dialogRef.afterClosed().subscribe(data => {
+      this.createdTask = data;
+      this.todoList.push( this.createdTask);
+    });
   }
 
   onAddTask(): any {
