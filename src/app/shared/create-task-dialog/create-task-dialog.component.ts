@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-create-task-dialog',
@@ -8,9 +7,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class CreateTaskDialogComponent implements OnInit {
 
-  constructor(
-    private readonly dialogRef: MatDialogRef<CreateTaskDialogComponent>,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TasksComponent } from './tasks/tasks.component';
   imports: [
     BrowserModule,
     CoreModule,
+    SharedModule,
     DragDropModule,
     MatIconModule,
     BrowserAnimationsModule,

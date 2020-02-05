@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { CreateTaskDialogComponent } from './create-task-dialog/create-task-dialog.component';
+import { CreateTaskDialogComponent } from '../shared/create-task-dialog/create-task-dialog.component';
 
 @Component({
   selector: 'app-tasks',
@@ -13,7 +13,6 @@ export class TasksComponent implements OnInit {
   @Input() todoList: any[];
   @Input() doneList: any[];
 
-  private dialogRef: MatDialogRef<CreateTaskDialogComponent> | undefined;
 
   constructor(
     private readonly dialog: MatDialog,
