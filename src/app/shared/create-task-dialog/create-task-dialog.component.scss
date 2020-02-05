@@ -1,0 +1,21 @@
+
+@import "./../../../assets/mixins/flex";
+
+.create-task {
+    &-dialog {
+
+    }
+    &-content {
+        @include d-flex {
+            flex-direction: getDirection(col);
+        }
+        width: 40rem;
+    }
+
+    &-actions {
+        @include d-flex {
+            justify-content: getAlign(fe);
+        }
+    }
+
+}

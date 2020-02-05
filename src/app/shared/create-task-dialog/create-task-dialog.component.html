@@ -1,1 +1,25 @@
-<p>create-task-dialog works!</p>
+<div class="create-task-dialog">
+    <div class="create-task-title mat-dialog-title">Create new task</div>
+    <div class="create-task-content mat-dialog-content">
+        <form [formGroup]="taskForm">
+            <mat-form-field>
+                <input matInput placeholder="titre" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field>
+                <textarea matInput placeholder="Description" formControlName="description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select placeholder="Priorité" formControlName="priority">
+                    <mat-option *ngFor="let value of priority" [value]="value">{{value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="create-task-actions mat-dialog-actions">
+        <button mat-button mat-dialog-close (click)="onCloseDialog()">Annuler</button>
+        <button mat-button (click)="onSave()">Save</button>
+    </div>
+
+</div>

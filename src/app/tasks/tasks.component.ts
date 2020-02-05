@@ -31,7 +31,8 @@ export class TasksComponent implements OnInit {
   }
 
   openCreateTaskDialog(): void {
-    this.dialog.open(CreateTaskDialogComponent);
+    const dialogRef = this.dialog.open(CreateTaskDialogComponent);
+    dialogRef.afterClosed().subscribe(data => console.log('output', data));
   }
 
   onAddTask(): any {
