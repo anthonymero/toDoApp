@@ -6,5 +6,10 @@
 
   app-tasks {
     padding: 2rem;
+    @include d-flex{
+      justify-content: getJustify(c);
+      align-content: getAlign(c); 
+    }
+
   }
 }

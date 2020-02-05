@@ -2,8 +2,9 @@
 
 .tasks-content {
   @include d-flex{
-    justify-content: getJustify(sa);
+    justify-content: getJustify(sb);
   }
+  width: calc(30rem * 2 + 10rem);
 
   .todo-list, .done-list {
     &-content {
