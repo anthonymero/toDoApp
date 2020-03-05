@@ -20,14 +20,20 @@ export class CreateTaskDialogComponent implements OnInit {
 
   ) {
     // this.taskDatas = data.taskDatas;
+    console.log('datas', data);
 
   }
 
   ngOnInit() {
+    // If data !== null 
+    // task datas = data
+    // else task datas = '';
+    const isOnEditMode = this.isOnEditMode(this.data);
+
     this.taskForm = this.fb.group({
-      title: [''],
-      description: [''],
-      priority: [''],
+      title: [ !!isOnEditMode ? this.data.title : ''],
+      description: [!!isOnEditMode ? this.data.description : ''],
+      priority: [!!isOnEditMode ? this.data.priority : ''],
     });
   }
 
@@ -37,6 +43,10 @@ export class CreateTaskDialogComponent implements OnInit {
 
   onSave(): void {
     this.dialogRef.close(this.taskForm.value);
+  }
+
+  private isOnEditMode(data) {
+    return data !== null;
   }
 
 

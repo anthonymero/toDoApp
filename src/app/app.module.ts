@@ -9,6 +9,8 @@ import { CoreModule } from './core/core.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { SharedModule } from './shared/shared.module';
+import { TaskService } from './services/task.service';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TaskService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
