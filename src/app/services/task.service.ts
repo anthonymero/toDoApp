@@ -33,6 +33,10 @@ export class TaskService {
 
   constructor() { }
 
+  getTodoList() {
+    return this.todoList;
+  }
+
   addTask(task) {
     this.todoList.push(task);
   }
