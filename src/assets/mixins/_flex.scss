@@ -1,0 +1,58 @@
+// Get justify-content value
+@function getJustify($arg) {
+  $justify: (
+      'sa': space-around,
+      'sb': space-between,
+      'se':space-evenly,
+      'c':center,
+      'fs':flex-start,
+      'fe':flex-end);
+
+  @each $key,
+  $value in $justify {
+    @if($key==$arg) {
+      @return $value;
+    }
+  }
+}
+
+// Get align-items value 
+@function getAlign($arg) {
+  $align: (
+      'auto': auto,
+      'b':baseline,
+      's':stretch,
+      'c':center,
+      'fs':flex-start,
+      'fe':flex-end);
+
+  @each $key,
+  $value in $align {
+    @if($key==$arg) {
+      @return $value;
+    }
+  }
+}
+
+// Get flex direction
+@function getDirection($arg) {
+  $direction: (
+      'col': column,
+      'colr': column-reverse,
+      'row': row,
+      'rowr': row-reverse,
+    );
+
+  @each $key,
+  $value in $direction {
+    @if($key==$arg) {
+      @return $value;
+    }
+  }
+}
+
+// Display flex
+@mixin d-flex() {
+  display: flex;
+  @content
+}

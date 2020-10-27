@@ -1,0 +1,79 @@
+@import "./../../assets/mixins";
+
+.tasks-content {
+  @include d-flex{
+    justify-content: getJustify(sb);
+  }
+  width: calc(30rem * 2 + 10rem);
+
+  .todo-list, .done-list {
+    &-content {
+      width: 30rem;
+      min-height: 5rem;
+      border: 1px solid grey;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+
+    &-header {
+      @include d-flex {
+        justify-content: getJustify(sb);
+      }
+      font-size: 1.8rem;
+      padding: 1rem 0 3rem;
+
+    }
+
+    &-task {
+      &-container {
+        width: 100%;
+        @include d-flex {
+          justify-content: getJustify(sb);
+        }
+        padding: 0.5rem 1rem;
+      }
+
+      &-icons {
+        @include d-flex{
+          flex-direction: getDirection(col);
+        }
+        cursor: pointer;
+        mat-icon.delete, mat-icon.edit {
+          width: 1.5rem;
+          @include d-flex{
+            align-self: getAlign(fe);
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+  
+  .draggable-box {
+      width: 200px;
+      height: 50px;
+      border: solid 1px #ccc;
+      color: rgba(0, 0, 0, 0.87);
+      cursor: move;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #fff;
+      border-radius: 4px;
+      position: relative;
+      z-index: 1;
+      transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+                  0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+    
+    .draggable-box:active {
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }

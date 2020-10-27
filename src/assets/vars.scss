@@ -1,0 +1,24 @@
+$color-black: #000000;
+$color-back-dark: #263C40;
+$color-red: #e14340;
+$color-red-error: #b00020;
+$color-green: #2A9C84;
+$color-pink:#F08A82;
+$color-orange:#F0B087;
+$color-grey:#d5c4c4;
+$color-light-grey: #e6dada;
+$color-white: #ffffff;
+$secondary-color: #88C6B1;
+$tertiary-color: #EDF7F5;
+$primary-color: #2b4178;
+$primary-background-color: rgba($primary-color, 0.05);
+
+$font-family: "Roboto";
+$home-bg-color: lighten($primary-color, 65.25%);
+
+// break points 
+// https://github.com/angular/flex-layout/wiki/Responsive-API
+$break-xs: 599px;
+$break-sm: 959px;
+$break-md: 1279px;
+$break-lg: 1919px;

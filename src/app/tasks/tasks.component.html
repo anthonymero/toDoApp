@@ -1,0 +1,36 @@
+<div class="tasks-content">
+
+  <div class="todo-list-content" [cdkDropListData]="todoList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    #listOfTodos="cdkDropList" [cdkDropListConnectedTo]="listOfDone">
+    <div class="todo-list-header">
+      <h1>Todo</h1>
+      <mat-icon svgIcon="plus-circle-outline" aria-hidden="false" aria-label="add task icon" (click)="onAddTask()"></mat-icon>
+    </div>
+
+    <!-- Todo List -->
+    <div class="todo-list-task-container draggable-box" cdkDrag *ngFor="let todo of todoList; let i = index">
+      <div class="todo-list-task-title">
+        {{todo.title}}
+      </div>
+      <div class="todo-list-task-icons">
+        <mat-icon svgIcon="close" aria-hidden="false" aria-label="delete task icon" class="delete"
+        (click)="onDelete(todo)"></mat-icon>
+        <mat-icon svgIcon="menu" aria-hidden="false" aria-label="edit task icon" class="edit" (click)="onEdit(todo)"></mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done List -->
+  <div class="done-list-content" [cdkDropListData]="doneList" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    #listOfDone="cdkDropList" [cdkDropListConnectedTo]="listOfTodos">
+    <div class="done-list-header">
+      <h1>Done</h1>
+      <mat-icon svgIcon="plus-circle-outline" aria-hidden="false" aria-label="add task icon"></mat-icon>
+
+    </div>
+
+    <div class="draggable-box" cdkDrag *ngFor="let done of doneList">
+      {{done.title}}
+    </div>
+  </div>
+</div>

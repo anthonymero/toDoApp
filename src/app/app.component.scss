@@ -1,0 +1,15 @@
+@import "../assets/main.scss";
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  app-tasks {
+    padding: 2rem;
+    @include d-flex{
+      justify-content: getJustify(c);
+      align-content: getAlign(c); 
+    }
+
+  }
+}

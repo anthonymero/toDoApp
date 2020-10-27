@@ -1,0 +1,24 @@
+@import "./../../assets/mixins";
+
+.navbar {
+    @include d-flex{
+        justify-content: getJustify(sb);
+        align-content: getAlign(c); 
+      }
+    height: 50px;
+    background: steelblue;
+    color: white;
+    padding: 1rem;
+
+    &-title {
+        flex: 1 0 auto;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &-menu {
+        @include d-flex{
+            align-items: getAlign(c);
+        }
+    }
+}
